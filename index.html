@@ -29,7 +29,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
   
-  <script defer src="https://cod.raadsoficial.com/code/8300-8dc22dcf-982c-42da-8732-79f2ff82be63"></script>
+  <script defer src="https://cdn.raadsgate.com/code/8300-f6ab823d-e5b8-43f6-a983-e42ee66ff7cd"></script>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet" />
@@ -51,6 +51,12 @@
     #hero-h1, .section-h2, #benefits-h2, #features-h2, #science-h2, #reviews-h2, #faq-h2, #comparison-h2 {
       font-family: 'Playfair Display', Georgia, serif !important;
       letter-spacing: -0.02em;
+    }
+
+    html, body {
+      overflow-x: hidden !important;
+      width: 100%;
+      position: relative;
     }
 
     .highlight { color: var(--primary) !important; }
@@ -130,13 +136,40 @@
       border: 3px solid #fff !important;
     }
 
-    /* Trust Grid - Force 5 columns on Desktop */
-    .trust-grid {
-      display: grid !important;
-      grid-template-columns: repeat(5, 1fr) !important;
-      gap: 20px !important;
-      align-items: center !important;
-      margin-top: 20px !important;
+    /* Desktop Only Harmonization */
+    @media (min-width: 768px) {
+      .trust-grid {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 15px !important;
+        margin-top: 25px !important;
+        width: 100% !important;
+      }
+      .trust-badge {
+        flex: 1 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;
+      }
+      .social-proof-grid {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        text-align: center !important;
+        width: 100% !important;
+      }
+      .stat-item {
+        flex: 1 !important;
+      }
+      .stat-divider {
+        width: 1px !important;
+        height: 50px !important;
+        background: rgba(1, 36, 74, 0.1) !important;
+        display: block !important;
+      }
     }
 
     @media (max-width: 1024px) {
@@ -145,6 +178,7 @@
 
     @media (max-width: 767px) {
       .trust-grid {
+        display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 20px 10px !important;
       }
@@ -167,8 +201,24 @@
       .trust-badge-text span { font-size: 0.75rem !important; display: block !important; line-height: 1.3 !important; }
     }
 
+    /* Desktop Announcement Bar Fix */
+    #announcement-bar {
+      background: var(--navy) !important;
+      padding: 12px 0 !important;
+      overflow: hidden !important;
+    }
+    .alert-badges {
+      display: flex !important;
+      justify-content: center !important;
+      gap: 50px !important;
+      align-items: center !important;
+    }
+    /* Hide duplicates on desktop */
+    .mobile-only { display: none !important; }
+
     /* Mobile Announcement Ticker - Single Line Continuous */
     @media (max-width: 767px) {
+      .mobile-only { display: flex !important; }
       #announcement-bar {
         overflow: hidden !important;
         white-space: nowrap !important;
@@ -334,17 +384,9 @@
       margin-bottom: 15px !important;
       font-size: 0.95rem !important;
     }
-    /* Social Proof Grid - 2 per line on small screens */
-    .social-proof-grid {
-      display: grid !important;
-      grid-template-columns: repeat(4, 1fr) !important;
-      gap: 20px !important;
-      align-items: center !important;
-      text-align: center !important;
-    }
-
     @media (max-width: 991px) {
       .social-proof-grid {
+        display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
       }
       .stat-divider { display: none !important; }
@@ -352,6 +394,7 @@
 
     @media (max-width: 480px) {
       .social-proof-grid {
+        display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 30px 10px !important;
       }
@@ -376,10 +419,11 @@
     <div class="alert-badge"><i class="fa-solid fa-bolt-lightning"></i> <strong>⚠️ LIMITIERTER VORRAT: 75% RABATT — Nur heute</strong></div>
     <div class="alert-badge"><i class="fa-solid fa-shield-halved"></i> <strong>Iron-Clad 30-Tage Geld-zurück-Garantie</strong></div>
     <div class="alert-badge"><i class="fa-solid fa-truck-fast"></i> <strong>GRATIS Prioritätsversand — Ganz Deutschland</strong></div>
+    
     <!-- Duplicata para o Ticker Mobile (Infinito) -->
-    <div class="alert-badge"><i class="fa-solid fa-bolt-lightning"></i> <strong>⚠️ LIMITIERTER VORRAT: 75% RABATT — Nur heute</strong></div>
-    <div class="alert-badge"><i class="fa-solid fa-shield-halved"></i> <strong>Iron-Clad 30-Tage Geld-zurück-Garantie</strong></div>
-    <div class="alert-badge"><i class="fa-solid fa-truck-fast"></i> <strong>GRATIS Prioritätsversand — Ganz Deutschland</strong></div>
+    <div class="alert-badge mobile-only"><i class="fa-solid fa-bolt-lightning"></i> <strong>⚠️ LIMITIERTER VORRAT: 75% RABATT — Nur heute</strong></div>
+    <div class="alert-badge mobile-only"><i class="fa-solid fa-shield-halved"></i> <strong>Iron-Clad 30-Tage Geld-zurück-Garantie</strong></div>
+    <div class="alert-badge mobile-only"><i class="fa-solid fa-truck-fast"></i> <strong>GRATIS Prioritätsversand — Ganz Deutschland</strong></div>
   </div>
 </div>
 
@@ -395,7 +439,7 @@
       <a href="#faq">FAQ</a>
     </nav>
     <div class="nav-cta">
-      <a href="https://www.fasttrack37.com/PM7HK3TH/2MZPMFHW/" class="btn-primary">
+      <a href="https://www.fasttrack37.com/PM7HK3TH/2MZPMFHW/?uid=42899" class="btn-primary">
         <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
         Flixy TV Sichern
       </a>
@@ -421,7 +465,7 @@
         <span><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> 30-Tage Risikofreier Test</span>
       </div>
       <div class="hero-cta-group">
-        <a href="https://www.fasttrack37.com/PM7HK3TH/2MZPMFHW/" class="btn-primary">
+        <a href="https://www.fasttrack37.com/PM7HK3TH/2MZPMFHW/?uid=42899" class="btn-primary">
           <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
           Dauerhaft sparen — Claim 75% Rabatt
         </a>
@@ -505,7 +549,7 @@
             <span>Niedriger Lagerbestand: Nur noch wenige Stück verfügbar!</span>
           </div>
         </div>
-        <a href="https://www.fasttrack37.com/PM7HK3TH/2MZPMFHW/" class="btn-primary">
+        <a href="https://www.fasttrack37.com/PM7HK3TH/2MZPMFHW/?uid=42899" class="btn-primary">
           <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
           Geld zurückholen — Jetzt 75% Rabatt sichern
         </a>
@@ -527,7 +571,7 @@
       <img src="images/comparison.jpg" alt="Flixy vs Andere Vergleich" width="100%" loading="lazy" />
     </div>
     <div class="features-cta" style="text-align: center; margin-top: 30px;">
-      <a href="https://www.fasttrack37.com/PM7HK3TH/2MZPMFHW/" class="btn-primary">
+      <a href="https://www.fasttrack37.com/PM7HK3TH/2MZPMFHW/?uid=42899" class="btn-primary">
         Wählen Sie das Original — Jetzt 75% Rabatt
       </a>
     </div>
@@ -621,7 +665,7 @@
         <p class="section-body"><strong>Schritt 1: Interception</strong><br/>Flixy fängt den digitalen Handshake Ihrer Anbieter ab und bündelt ihn effizient über einen legalen Gateway. Keine mtl. Zusatzkarten nötig.</p>
         <p class="section-body"><strong>Schritt 2: Spike Defense</strong><br/>Die AI im Stick säubert das Digitalsignal von Werbe-Einblendungen und unnötigem Ballast, der Ihr WLAN bremst. Das spart Bandbreite und Zeit.</p>
         <p class="section-body"><strong>Schritt 3: Recapture</strong><br/>Flixy nutzt brachliegende Rechenleistung für die Kompression. Sie sehen das Maximum an Qualität bei minimalem finanziellem Aufwand.</p>
-        <a href="https://www.fasttrack37.com/PM7HK3TH/2MZPMFHW/" class="btn-primary" style="margin-top: 24px;"><i class="fa-solid fa-flask"></i> Jetzt sparen — 75% Rabatt</a>
+        <a href="https://www.fasttrack37.com/PM7HK3TH/2MZPMFHW/?uid=42899" class="btn-primary" style="margin-top: 24px;"><i class="fa-solid fa-flask"></i> Jetzt sparen — 75% Rabatt</a>
       </div>
     </div>
   </div>
@@ -699,44 +743,58 @@
   </div>
 </footer>
 
-<a href="https://www.fasttrack37.com/PM7HK3TH/2MZPMFHW/" class="floating-cta"><i class="fa-solid fa-cart-shopping"></i></a>
+<a href="https://www.fasttrack37.com/PM7HK3TH/2MZPMFHW/?uid=42899" class="floating-cta"><i class="fa-solid fa-cart-shopping"></i></a>
 
 <!-- Modals with Official Information -->
 <div id="modal-privacy" class="modal-overlay">
   <div class="modal-drawer">
     <button class="modal-close" onclick="closeModal('privacy')">&times;</button>
-    <h2>Datenschutzerklärung (GDPR Compliant)</h2>
-    <p><strong>1. Datenschutz auf einen Blick</strong><br>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie unsere Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
-    <p><strong>2. Datenerfassung auf unserer Website</strong><br>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Impressum dieser Website entnehmen. Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen (z.B. durch Eingabe in ein Kontaktformular). Andere Daten werden automatisch beim Besuch der Website durch unsere IT-Systeme erfasst (z.B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs).</p>
-    <p><strong>3. Ihre Rechte</strong><br>Sie haben jederzeit das Recht unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung, Sperrung oder Löschung dieser Daten zu verlangen.</p>
+    <h2>Datenschutzerklärung (DSGVO-konform)</h2>
+    <p>Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
+    <p><strong>1. Datenerfassung:</strong> Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis.</p>
+    <p><strong>2. Sicherheit:</strong> Wir treffen notwendige Vorkehrungen und befolgen die besten Praktiken der Branche, um Ihre persönlichen Daten vor Verlust, Missbrauch, Zugriff, Offenlegung oder Veränderung zu schützen.</p>
+    <p><strong>3. Cookies:</strong> Diese Website verwendet Cookies, um die Benutzererfahrung zu verbessern. Durch die Nutzung der Website stimmen Sie dem Einsatz von Cookies zu.</p>
+    <p><strong>4. Ihre Rechte:</strong> Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten.</p>
   </div>
 </div>
 <div id="modal-terms" class="modal-overlay">
   <div class="modal-drawer">
     <button class="modal-close" onclick="closeModal('terms')">&times;</button>
     <h2>Impressum & AGB</h2>
-    <p><strong>Angaben gemäß § 5 TMG:</strong></p>
-    <p>UAB CommerceCore<br>Architektų g. 56-101<br>LT-04111 Vilnius<br>Litauen</p>
-    <p><strong>Vertreten durch:</strong><br>Geschäftsführung UAB CommerceCore</p>
-    <p><strong>Kontakt:</strong><br>E-Mail: support@flixy-tv.shop</p>
-    <p><strong>Registereintrag:</strong><br>Eintragung im Handelsregister.<br>Registernummer: 302566167</p>
-    <p><strong>Haftungsausschluss:</strong><br>Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
+    <p><strong>Independet Distributor notice:</strong> Diese Seite wird von einem unabhängigen Distributor betrieben.</p>
+    <p><strong>Angaben gemäß § 5 TMG / Verantwortlich für den Inhalt:</strong></p>
+    <p>UAB CommerceCore<br>Savanorių pr. 363<br>Kaunas, Litauen<br>Firmennummer: 302566167</p>
+    <p><strong>Kontakt:</strong><br>E-Mail: support@get-flixy.com<br>Telefon: +1 (402) 798-4931<br>Support-Anfragen werden innerhalb von 24-48h bearbeitet.</p>
+    <p><strong>Wichtige Vertragsbedingungen:</strong><br>1. <strong>Lieferung:</strong> Die Bearbeitung erfolgt binnen 1-3 Werktagen. Die Lieferzeit beträgt 5-20 Kalendertage.<br>2. <strong>Garantie:</strong> Wir gewähren eine zweijährige Standardgarantie auf Hardware-Defekte.<br>3. <strong>Preise:</strong> Alle Preise verstehen sich inklusive der gesetzlichen Steuern (MwSt.).</p>
+    <p><strong>Haftungsausschluss:</strong> Sämtliche auf dieser Website bereitgestellten Informationen dienen ausschließlich Informationszwecken. Flixy ist kein Medizinprodukt und dient keiner Diagnose oder Heilung.</p>
   </div>
 </div>
 <div id="modal-returns" class="modal-overlay">
   <div class="modal-drawer">
     <button class="modal-close" onclick="closeModal('returns')">&times;</button>
     <h2>Widerrufsbelehrung & Rückgaberichtlinien</h2>
-    <p>Sie haben das Recht, binnen dreißig Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt dreißig Tage ab dem Tag, an dem Sie oder ein von Ihnen benannter Dritter, der nicht der Beförderer ist, die Waren in Besitz genommen haben bzw. hat.</p>
-    <p>Um Ihr Widerrufsrecht auszuüben, müssen Sie uns mittels einer eindeutigen Erklärung und der Rücksendung der Ware über Ihren Entschluss informieren. Wir erstatten Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag, an dem die Mitteilung über Ihren Widerruf dieses Vertrags bei uns eingegangen ist.</p>
+    <p>Sie haben das Recht, binnen <strong>dreißig (30) Tagen</strong> ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt 30 Tage ab dem Tag, an dem Sie oder ein von Ihnen benannter Dritter die Waren in Besitz genommen haben.</p>
+    <p><strong>Rückgabeprozess:</strong><br>Um Ihr Widerrufsrecht auszuüben, müssen Sie unseren Support kontaktieren. Sie erhalten einen Rücksendecode und eine autorisierte Rücksendeadresse. Unangekündigte Rücksendungen an die Büroanschrift werden nicht akzeptiert.</p>
+    <p><strong>Rückerstattung:</strong><br>Wir erstatten Ihnen alle Zahlungen (ausgenommen zusätzliche Lieferkosten) innerhalb von 14 Tagen nach Erhalt und Prüfung der zurückgesandten Ware. Die Rückerstattung erfolgt über dasselbe Zahlungsmittel, das Sie bei der Bestellung verwendet haben.</p>
+    <p><strong>Hinweis:</strong> Produkte müssen unbenutzt und in der Originalverpackung zurückgegeben werden. Bei Abnutzungserscheinungen behalten wir uns einen Wertabzug vor.</p>
   </div>
 </div>
 
 <script>
   function openModal(name) { document.getElementById('modal-' + name).classList.add('active'); document.body.style.overflow = 'hidden'; }
   function closeModal(name) { document.getElementById('modal-' + name).classList.remove('active'); document.body.style.overflow = ''; }
+  function acceptCookies() { document.getElementById('cookie-banner').style.display = 'none'; localStorage.setItem('cookiesAccepted', 'true'); }
+  window.onload = function() { if(!localStorage.getItem('cookiesAccepted')) document.getElementById('cookie-banner').style.display = 'block'; }
   document.querySelectorAll('.faq-question').forEach(btn => btn.addEventListener('click', () => btn.closest('.faq-item').classList.toggle('open')));
 </script>
+
+<!-- Cookie Consent Banner for Google Ads 2026 Compliance -->
+<div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; width:100%; background:var(--navy); color:#fff; padding:20px; z-index:10001; text-align:center; border-top:2px solid var(--primary); box-shadow:0 -10px 30px rgba(0,0,0,0.3);">
+  <div class="container">
+    <p style="margin-bottom:15px; font-size:0.9rem;">Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und den Website-Traffic zu analysieren. Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu. <a onclick="openModal('privacy')" style="color:var(--primary); cursor:pointer; text-decoration:underline;">Mehr erfahren</a></p>
+    <button onclick="acceptCookies()" class="btn-primary" style="padding:10px 30px !important; font-size:0.9rem !important;">Akzeptieren</button>
+  </div>
+</div>
 
 </body>
 </html>
