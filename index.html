@@ -293,6 +293,7 @@
     @media (max-width: 767px) {
       .urgency-badge {
         flex-direction: column !important;
+        align-items: center !important;
         text-align: center !important;
         border-radius: 20px !important;
         padding: 15px !important;
@@ -302,6 +303,19 @@
       .urgency-text strong, .urgency-text span {
         display: block !important;
         white-space: normal !important;
+      }
+      .benefits-text {
+        text-align: center !important;
+      }
+      .section-label {
+        display: table !important;
+        margin: 0 auto 15px !important;
+      }
+      .feature-card {
+        text-align: center !important;
+      }
+      .feature-icon-wrap {
+        margin: 0 auto 20px !important;
       }
     }
 
@@ -799,7 +813,16 @@
 
 <style>
   @media (max-width: 767px) {
-    #cookie-banner { bottom: 10px !important; left: 10px !important; right: 10px !important; padding: 12px 18px !important; max-width: none !important; }
+    #cookie-banner { 
+      bottom: 20px !important; 
+      left: 15px !important; 
+      right: 15px !important; 
+      padding: 10px 20px !important; 
+      max-width: none !important; 
+      border-radius: 40px !important;
+    }
+    #cookie-banner p { font-size: 0.75rem !important; }
+    #cookie-banner button { padding: 6px 16px !important; font-size: 11px !important; }
   }
 </style>
 
