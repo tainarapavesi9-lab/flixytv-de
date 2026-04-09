@@ -301,7 +301,7 @@
       }
       .urgency-text strong, .urgency-text span {
         display: block !important;
-        white-space: nowrap !important;
+        white-space: normal !important;
       }
     }
 
@@ -789,12 +789,19 @@
 </script>
 
 <!-- Cookie Consent Banner for Google Ads 2026 Compliance -->
-<div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; width:100%; background:var(--navy); color:#fff; padding:20px; z-index:10001; text-align:center; border-top:2px solid var(--primary); box-shadow:0 -10px 30px rgba(0,0,0,0.3);">
-  <div class="container">
-    <p style="margin-bottom:15px; font-size:0.9rem;">Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und den Website-Traffic zu analysieren. Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu. <a onclick="openModal('privacy')" style="color:var(--primary); cursor:pointer; text-decoration:underline;">Mehr erfahren</a></p>
-    <button onclick="acceptCookies()" class="btn-primary" style="padding:10px 30px !important; font-size:0.9rem !important;">Akzeptieren</button>
+<!-- Minimalist Cookie Consent -->
+<div id="cookie-banner" style="display:none; position:fixed; bottom:20px; left:20px; right:20px; background:rgba(1, 36, 74, 0.95); backdrop-filter:blur(10px); color:#fff; padding:15px 25px; z-index:10001; border-radius:15px; border:1px solid rgba(255,255,255,0.1); box-shadow:0 10px 30px rgba(0,0,0,0.3); max-width: 450px;">
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:20px;">
+    <p style="margin:0; font-size:0.85rem; line-height:1.4;">Wir nutzen Cookies für Ihr Erlebnis. <a onclick="openModal('privacy')" style="color:var(--primary); cursor:pointer; text-decoration:underline;">Details</a></p>
+    <button onclick="acceptCookies()" class="btn-primary" style="padding:8px 20px !important; font-size:12px !important; border-radius:30px !important; white-space:nowrap !important; height:auto !important; margin:0 !important;">OK</button>
   </div>
 </div>
+
+<style>
+  @media (max-width: 767px) {
+    #cookie-banner { bottom: 10px !important; left: 10px !important; right: 10px !important; padding: 12px 18px !important; max-width: none !important; }
+  }
+</style>
 
 </body>
 </html>
